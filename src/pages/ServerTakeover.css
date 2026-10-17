@@ -1,0 +1,134 @@
+/* PAGE */
+.takeover-page {
+  padding: 60px;
+  background: #0b0b0c;
+  color: #e6e6e6;
+  min-height: 100vh;
+  font-family: "Orbitron", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* SCANLINES */
+.takeover-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* TITLES */
+.page-title {
+  font-size: 38px;
+  color: #fff;
+  text-shadow: 0 0 12px rgba(255, 90, 0, 0.4);
+}
+
+.page-desc {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #cfcfcf;
+}
+
+/* GRID */
+.takeover-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+/* PANELS */
+.panel {
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid rgba(255, 90, 0, 0.4);
+  padding: 25px;
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(255, 90, 0, 0.2);
+  backdrop-filter: blur(4px);
+  transition: 0.2s;
+}
+
+.panel:hover {
+  box-shadow: 0 0 18px rgba(255, 90, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+/* PANEL TITLE */
+.panel-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #ff5a00;
+  text-shadow: 0 0 10px #ff5a00;
+}
+
+/* REQUIREMENTS LIST */
+.req-list li {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+/* SCHEDULE LIST */
+.schedule-list li {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+/* FORM */
+.takeover-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.takeover-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  color: #cfcfcf;
+}
+
+.takeover-form input,
+.takeover-form textarea {
+  margin-top: 6px;
+  padding: 10px;
+  background: #111;
+  border: 1px solid #ff5a00;
+  color: #fff;
+  border-radius: 4px;
+  font-family: inherit;
+  resize: none;
+}
+
+.takeover-form input:focus,
+.takeover-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 12px #ff5a00;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+  margin-top: 10px;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid #ff5a00;
+  color: #ff5a00;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  background: rgba(255, 90, 0, 0.15);
+  box-shadow: 0 0 12px #ff5a00;
+}

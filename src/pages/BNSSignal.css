@@ -1,0 +1,142 @@
+/* PAGE */
+.signal-page {
+  padding: 60px;
+  background: #0b0b0c;
+  color: #e6e6e6;
+  min-height: 100vh;
+  font-family: "Orbitron", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* SCANLINES */
+.signal-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* TITLES */
+.page-title {
+  font-size: 38px;
+  color: #fff;
+  text-shadow: 0 0 12px rgba(255, 90, 0, 0.4);
+}
+
+.page-desc {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #cfcfcf;
+}
+
+/* HEARTBEAT */
+.heartbeat {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.pulse {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 90, 0, 0.3);
+  box-shadow: 0 0 12px rgba(255, 90, 0, 0.2);
+  transition: 0.3s;
+}
+
+.pulse.active {
+  background: #ff5a00;
+  box-shadow: 0 0 18px #ff5a00;
+}
+
+/* GRID */
+.signal-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+/* PANELS */
+.panel {
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid rgba(255, 90, 0, 0.4);
+  padding: 25px;
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(255, 90, 0, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.panel-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #ff5a00;
+  text-shadow: 0 0 10px #ff5a00;
+}
+
+/* STATUS LIST */
+.signal-list li {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.status-online {
+  color: #0f0;
+  font-weight: 700;
+  text-shadow: 0 0 10px #0f0;
+}
+
+.latency {
+  color: #ff5a00;
+  font-weight: 700;
+}
+
+.strength {
+  color: #ff5a00;
+  font-weight: 700;
+}
+
+/* TELEMETRY BARS */
+.telemetry-bars {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.bar {
+  width: 20%;
+  height: 80px;
+  background: #ff5a00;
+  opacity: 0.7;
+  animation: pulseBar 1.4s infinite ease-in-out;
+}
+
+.bar1 { animation-delay: 0s; }
+.bar2 { animation-delay: 0.2s; }
+.bar3 { animation-delay: 0.4s; }
+.bar4 { animation-delay: 0.6s; }
+
+@keyframes pulseBar {
+  0% { height: 20px; opacity: 0.4; }
+  50% { height: 80px; opacity: 1; }
+  100% { height: 20px; opacity: 0.4; }
+}
+
+/* ALERTS */
+.alert-list li {
+  margin: 8px 0;
+  font-size: 16px;
+}

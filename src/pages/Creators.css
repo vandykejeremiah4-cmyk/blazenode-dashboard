@@ -1,0 +1,130 @@
+/* PAGE */
+.creators-page {
+  padding: 60px;
+  background: #0b0b0c;
+  color: #e6e6e6;
+  min-height: 100vh;
+  font-family: "Orbitron", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* SCANLINES */
+.creators-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* TITLES */
+.page-title {
+  font-size: 38px;
+  color: #fff;
+  text-shadow: 0 0 12px rgba(255, 90, 0, 0.4);
+}
+
+.page-desc {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #cfcfcf;
+}
+
+/* GRID */
+.creators-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+/* CARD */
+.creator-card {
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid rgba(255, 90, 0, 0.4);
+  padding: 25px;
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(255, 90, 0, 0.2);
+  backdrop-filter: blur(4px);
+  transition: 0.2s;
+}
+
+.creator-card:hover {
+  box-shadow: 0 0 18px rgba(255, 90, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+/* NAME */
+.creator-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ff5a00;
+  text-shadow: 0 0 10px #ff5a00;
+}
+
+/* META */
+.creator-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.creator-role {
+  font-size: 16px;
+  color: #cfcfcf;
+}
+
+/* STATUS BADGES */
+.creator-status {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.creator-status.verified {
+  background: #0f0;
+  color: #000;
+  box-shadow: 0 0 10px #0f0;
+}
+
+.creator-status.pending {
+  background: #ff5a00;
+  color: #000;
+  box-shadow: 0 0 10px #ff5a00;
+}
+
+/* BIO */
+.creator-bio {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #cfcfcf;
+}
+
+/* BUTTON */
+.creator-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #ff5a00;
+  color: #ff5a00;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.creator-btn:hover {
+  background: rgba(255, 90, 0, 0.15);
+  box-shadow: 0 0 12px #ff5a00;
+}
