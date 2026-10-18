@@ -22,11 +22,18 @@ export default function Home() {
   const [stats, setStats] = useState({ servers: 1, members: 0, partners: 0 });
 
 useEffect(() => {
- fetch("https://blazenode-backend.onrender.com/api/stats")
-    .then(res => res.json())
-    .then(data => setStats(data));
-}, []);
+  const load = () => {
+    fetch(`${import.meta.env.VITE_API_URL}/api/stats`)
+      .then(res => res.json())
+      .then(data => setStats(data))
+      .catch(err => console.error("Stats fetch failed:", err));
+  };
 
+  load(); // initial load
+  const interval = setInterval(load, 10000); // refresh every 10s
+
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <main className="home">
